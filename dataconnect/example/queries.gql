@@ -1,0 +1,47 @@
+query ListAllMovies @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public as it only lists public movie data.") {
+  movies(limit: 50) {
+    id
+    title
+    year
+    summary
+    genres
+    runtimeMinutes
+  }
+}
+
+query GetUserMovieLists @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users as it fetches their own movie lists.") {
+  movieLists(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    name
+    description
+    isPublic
+    privateShareLink
+    createdAt
+    updatedAt
+    movieListEntries_on_movieList {
+      movie {
+        title
+        year
+      }
+      position
+    }
+  }
+}
+
+mutation CreateMovieReview($movieId: UUID!, $rating: Int!, $reviewText: String, $isPublic: Boolean!, $watchId: UUID!) @auth(level: USER) {
+  review_insert(data: {
+    userId_expr: "auth.uid",
+    movieId: $movieId,
+    rating: $rating,
+    reviewText: $reviewText,
+    isPublic: $isPublic,
+    watchId: $watchId
+  })
+}
+
+mutation UpdateUserDisplayName($newDisplayName: String!) @auth(level: USER) {
+  user_update(
+    key: {id_expr: "auth.uid"},
+    data: {displayName: $newDisplayName}
+  )
+}

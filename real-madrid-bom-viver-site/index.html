@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Madrid Bom Viver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <img src="logo.png" class="logo" alt="Logo">
+  <h1>Real Madrid Bom Viver</h1>
+  <p>Agenda de jogos e reservas</p>
+</header>
+
+<main class="layout">
+
+  <div class="conteudo">
+
+    <div style="text-align:center; margin-bottom:20px;">
+      <button id="btnAdmin">Modo Admin</button>
+    </div>
+
+    <!-- AGENDA -->
+    <section class="card">
+      <h2>📅 Agenda</h2>
+      <ul id="agendaLista"></ul>
+    </section>
+
+    <!-- RESERVA -->
+    <section class="card">
+      <h2>⚽ Reservar amistoso</h2>
+
+      <form id="formReserva">
+        <input type="text" name="nome" placeholder="Nome do time" required>
+        <input type="text" name="telefone" placeholder="Telefone">
+        <input type="text" name="campo" placeholder="Campo">
+        <input type="text" name="horario" placeholder="Horário">
+        <textarea name="obs" placeholder="Observação"></textarea>
+
+        <select name="data" required></select>
+
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- LATERAL PATROCINADOR -->
+ <aside class="patrocinadores">
+  <h3>🤝 Patrocinador Oficial</h3>
+
+  <div class="patro-box">
+    <img src="caio-presentes.png"Caio Presentes" class="patro-img">
+    <p>Moda Infantil & Juvenil</p>
+  </div>
+</aside>
+
+</main>
+
+<script type="module" src="script.js"></script>
+
+<!-- BOTÕES WHATSAPP -->
+<div class="whatsapp-container">
+  <a href="https://wa.me/5548996806004" target="_blank" class="whatsapp-btn">
+    📞 Paulo
+  </a>
+
+  <a href="https://wa.me/5548984433150" target="_blank" class="whatsapp-btn">
+    📞 Ermeson
+  </a>
+</div>
+
+</body>
+</html>

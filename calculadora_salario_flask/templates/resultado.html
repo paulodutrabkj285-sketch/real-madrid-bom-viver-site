@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; }
+        .resultado { background: #fff; padding: 20px; border-radius: 8px; width: 300px; }
+        h2 { color: #333; }
+        a { display: inline-block; margin-top: 12px; color: #4CAF50; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="resultado">
+        <h2>Resultado</h2>
+        <p>Seu salário líquido é: <strong>R$ {{ salario_liquido | round(2) }}</strong></p>
+        <a href="/">Calcular novamente</a>
+    </div>
+</body>
+</html>

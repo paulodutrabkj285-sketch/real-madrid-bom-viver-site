@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Salário Líquido</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; }
+        h2 { color: #333; }
+        form { background: #fff; padding: 20px; border-radius: 8px; width: 300px; }
+        label { display: block; margin-top: 10px; }
+        input { padding: 6px; width: 100%; margin-top: 4px; }
+        button { margin-top: 12px; padding: 8px 14px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Salário Líquido</h2>
+    <form action="/resultado" method="post">
+        <label>Salário Bruto:
+            <input type="text" name="salario" placeholder="Ex.: 3000,00" required>
+        </label>
+        <label>Número de Dependentes:
+            <input type="number" name="dependentes" min="0" value="0" required>
+        </label>
+        <button type="submit">Calcular</button>
+    </form>
+</body>
+</html>
